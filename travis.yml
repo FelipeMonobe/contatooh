@@ -10,3 +10,8 @@ before-install:
 	- npm install -g protractor@1.5 
 	- webdriver-manager update 
 	- bower install
+before-script:
+	- grunt
+	- cd dist
+script:
+	- karma start config/karma.config.js --single-run --browsers PhantomJS
