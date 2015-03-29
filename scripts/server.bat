@@ -1,0 +1,6 @@
+set NODE_ENV=development
+set SELENIUM_USER=XinubeApps
+set SELENIUM_USER_PASSWORD=cavera123
+set CLIENT_ID=b2f174b878a8e9bea1d0
+set CLIENT_SECRET=9ba9c33634199e0faf55fd93fb8199c645959c03
+node server
