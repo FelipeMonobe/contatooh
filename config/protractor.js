@@ -18,15 +18,13 @@ exports.config = {
 
 		browser.driver.wait(function() {
     		return browser.driver.findElement(by.id('entrar')).isDisplayed();
-		}, 30000);
+		}, 60000);
 
 		browser.driver.findElement(by.id('entrar')).click();
 		browser.driver.findElement(by.id('login_field'))
-		//.sendKeys(config.seleniumUser);
-		.sendKeys('XinubeApps');
+		.sendKeys(config.seleniumUser);
 		browser.driver.findElement(by.id('password'))
-		//.sendKeys(config.seleniumUserPassword);
-		.sendKeys('cavera123');
+		.sendKeys(config.seleniumUserPassword);
 		browser.driver.findElement(by.name('commit')).click();
 	}
 };
