@@ -16,15 +16,16 @@ exports.config = {
 	onPrepare: function () {
 		browser.driver.get('http://localhost:3000');
 
-		browser.driver.wait(function() {
-    		return browser.driver.findElement(by.id('entrar')).isDisplayed();
-		}, 60000);
-
-		browser.driver.findElement(by.id('entrar')).click();
-		browser.driver.findElement(by.id('login_field'))
-		.sendKeys(config.seleniumUser);
-		browser.driver.findElement(by.id('password'))
-		.sendKeys(config.seleniumUserPassword);
-		browser.driver.findElement(by.name('commit')).click();
+		browser.findElements(by.id('entrar'))
+		.then(function(elements) {
+			if (elements.length) {
+				browser.driver.findElement(by.id('entrar')).click();
+				browser.driver.findElement(by.id('login_field'))
+				.sendKeys(config.seleniumUser);
+				browser.driver.findElement(by.id('password'))
+				.sendKeys(config.seleniumUserPassword);
+				browser.driver.findElement(by.name('commit')).click();
+			}
+      });
 	}
 };
