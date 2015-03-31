@@ -4,7 +4,7 @@
 	"use strict";
 
 	angular
-	.module('contatooh', ['ngRoute', 'ngResource'])
+	.module('contatooh', ['ngRoute', 'ngResource', 'meusComponentes'])
 	.config(configuracao);
 
 	function configuracao ($routeProvider, $httpProvider) {

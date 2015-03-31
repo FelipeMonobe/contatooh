@@ -1,4 +1,4 @@
-<!-- public/partials/contato.html -->
+<!-- public/partials/contatos.html -->
 
 <div class="jumbotron">
 <h1 class="text-center">Bem vindo ao Contatooh</h1>
@@ -8,6 +8,9 @@
 <a class="btn btn-primary" ng-href="#/contato">Novo Contato</a>
 <input ng-model="vm.filtro" type="search" placeholder="parte do nome">
 <p ng-show="vm.contatos.length">Contatos cadastrados: {{vm.contatos.length}}</p>
+
+<meu-painel titulo="Listagem de contatos">
+
 <p ng-hide="vm.contatos.length" class="text-info">Não há contatos cadastrados</p>
 <div class="table-responsive">
 	<table class="table table-hover">
@@ -24,8 +27,9 @@
 			<td>{{contato.email}}</td>
 			<td>{{contato.emergencia.nome}}</td>
 			<td class="text-center">
-				<button ng-click="vm.remove(contato)" class="btn btn-warning">Remover</button>
+				<meu-botao-aviso acao="vm.remove(contato)" nome="Remover"></meu-botao-aviso>
 			</td>
 		</tr>
 	</table>
 </div>
+</meu-painel>
