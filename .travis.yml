@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-- 0.10
+- 0.1
 env:
   global:
-    - NODE_ENV: test
+  - NODE_ENV: test
 notifications:
   email: xinube@gmail.com
 addons:
@@ -19,9 +19,23 @@ before_install:
 - bower install
 before_script:
 - node test/data.js
-- grunt
-- cd dist
+- grunt minifica
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - node server &
 - protractor config/protractor.js
+deploy:
+  provider: openshift
+  user: xinube@gmail.com
+  password:
+    secure: AE+Pk3z9tnPhI80aDjGW4bWUixtwYXygqC2OkCM03WNUB9utMnQyLwR/GxZ/ponSgfDjE4WTQyN3bWceyY1X+EXqg8kXh9psBXfZtsM/l80YSXWZ7L5EHwl/hWsiCfw84DX1vWGm9akHU0Ul+br+duo8mH0K6C1dsXVq0RyaunU=
+  app: contatooh
+  domain: contatooh-xnb.rhcloud.com
+  on:
+    repo: XinubeApps/contatooh
+before_deploy:
+- git config --global user.email 'travis@travis-ci.com'
+- git config --global user.name 'Travis CI'
+- git checkout $TRAVIS_BRANCH
+- git add --all
+- git commit -am "Travis commit"
