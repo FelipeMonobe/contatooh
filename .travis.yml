@@ -30,7 +30,7 @@ deploy:
   password:
     secure: AE+Pk3z9tnPhI80aDjGW4bWUixtwYXygqC2OkCM03WNUB9utMnQyLwR/GxZ/ponSgfDjE4WTQyN3bWceyY1X+EXqg8kXh9psBXfZtsM/l80YSXWZ7L5EHwl/hWsiCfw84DX1vWGm9akHU0Ul+br+duo8mH0K6C1dsXVq0RyaunU=
   app: contatooh
-  domain: contatooh-xnb.rhcloud.com
+  domain: xnb
   on:
     repo: XinubeApps/contatooh
 before_deploy:
