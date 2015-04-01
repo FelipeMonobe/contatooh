@@ -9,7 +9,7 @@ require('./config/passport')();
 require('./config/database')(config.db);
 
 http.createServer(app).listen(config.port, config.address, function () {
-	console.log('\nExpress Server escutando em'
+	console.log('\nExpress Server escutando em '
 	+ config.address
 	+ ':' + config.port);
 });
