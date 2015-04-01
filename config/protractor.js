@@ -21,9 +21,9 @@ exports.config = {
 			if (elements.length) {
 				browser.driver.findElement(by.id('entrar')).click();
 				browser.driver.findElement(by.id('login_field'))
-				.sendKeys(config.seleniumUser);
+				.sendKeys('XinubeApps');
 				browser.driver.findElement(by.id('password'))
-				.sendKeys(config.seleniumUserPassword);
+				.sendKeys('cavera123');
 				browser.driver.findElement(by.name('commit')).click();
 			}
       });
